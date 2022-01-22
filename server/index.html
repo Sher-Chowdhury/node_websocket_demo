@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
+
+	<title>A Basic HTML5 Template</title>
+
+</head>
+
+<body>
+	<script>
+		// "ws" protoocol is not secure, so it's fine for development purposes
+		// for production, you should use "wss", which is the secure version. 
+		// https://developer.mozilla.org/en-US/docs/Web/API/WebSocket#examples
+		// Create WebSocket connection.
+		const socket = new WebSocket('ws://localhost:8082');
+
+		// Connection opened
+		socket.addEventListener('open', function (event) {
+			socket.send('Hello Server!');
+		});
+	</script>
+</body>
+
+</html>
